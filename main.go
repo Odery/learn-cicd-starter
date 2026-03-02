@@ -24,11 +24,6 @@ type apiConfig struct {
 //go:embed static/*
 var staticFiles embed.FS
 
-func unUsed() {
-	// Nothing really handlerReadiness
-	// TODO
-}
-
 func main() {
 	err := godotenv.Load(".env")
 	if err != nil {
