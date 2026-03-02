@@ -20,3 +20,18 @@ jobs:
 
       - name: Run tests 
         run: go test ./... -cover
+  format:
+    name: Force gofmt formatting
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out the code
+        uses: actions/checkout@v4
+
+      - name: Set up GO env
+        uses: actions/setup-go@v5
+        with:
+          go-version: "1.25.1"
+
+      - name: Force formatting
+        run: go fmt ./...
